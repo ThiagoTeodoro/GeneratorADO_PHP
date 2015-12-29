@@ -232,8 +232,10 @@ class GeneratorCRUD {
                     $Escrevendo = fwrite($ArquivoCRUD, PHP_EOL);
                     $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab . '} else {' . PHP_EOL);
                     $Escrevendo = fwrite($ArquivoCRUD, PHP_EOL);
+                    $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab .$Tab . '$ArrayErro = $Insert->errorInfo(); //A posição 2 do ArrayErro vai armezenar a Descrição do Erro.' . PHP_EOL);
+                    $Escrevendo = fwrite($ArquivoCRUD, PHP_EOL);
                     $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab .$Tab . '$TratamentoMensagens = new TratamentoMensagens();' . PHP_EOL);
-                    $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab .$Tab . '$TratamentoMensagens->MsgErro(\'Erro no processamento do Insert no Banco de Dados.\', NULL, NULL);' . PHP_EOL);
+                    $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab .$Tab . '$TratamentoMensagens->MsgErro(\'Erro no processamento do Insert no Banco de Dados. Descrição do Erro : \' . $ArrayErro[2], NULL, NULL);' . PHP_EOL);
                     $Escrevendo = fwrite($ArquivoCRUD, PHP_EOL);
                     $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab .$Tab . 'return FALSE;' . PHP_EOL);
                     $Escrevendo = fwrite($ArquivoCRUD, PHP_EOL);
@@ -343,8 +345,10 @@ class GeneratorCRUD {
                         $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab . PHP_EOL);
                         $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab . '} else {' . PHP_EOL);
                         $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab . PHP_EOL);
+                        $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab . $Tab . '$ArrayErro = $Update->errorInfo(); //A posição 2 do ArrayErro vai armezenar a Descrição do Erro.' . PHP_EOL);
+                        $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab . PHP_EOL);
                         $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab . $Tab . '$TratamentoMensagens = new TratamentoMensagens();' . PHP_EOL);
-                        $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab . $Tab . '$TratamentoMensagens->MsgErro(\'Erro no processamento do Update no Banco de Dados.\', NULL, NULL);' . PHP_EOL);
+                        $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab . $Tab . '$TratamentoMensagens->MsgErro(\'Erro no processamento do Update no Banco de Dados. Descrição do Erro : \' . $ArrayErro[2], NULL, NULL);' . PHP_EOL);
                         $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab . PHP_EOL);
                         $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab . $Tab . 'return FALSE;' . PHP_EOL);
                         $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab . PHP_EOL);
@@ -410,8 +414,10 @@ class GeneratorCRUD {
                         $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab . PHP_EOL);
                         $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab . '} else {' . PHP_EOL);
                         $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab . PHP_EOL);
+                        $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab . $Tab . '$ArrayErro = $Delete->errorInfo(); //A posição 2 do ArrayErro vai armezenar a Descrição do Erro.' . PHP_EOL);
+                        $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab . PHP_EOL);
                         $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab . $Tab . '$TratamentoMensagens = new TratamentoMensagens();' . PHP_EOL);
-                        $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab . $Tab . '$TratamentoMensagens->MsgErro(\'Erro no processamento do Delete no Banco de Dados.\', NULL, NULL);' . PHP_EOL);
+                        $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab . $Tab . '$TratamentoMensagens->MsgErro(\'Erro no processamento do Delete no Banco de Dados. Descrição do Erro : \' . $ArrayErro[2], NULL, NULL);' . PHP_EOL);
                         $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab . PHP_EOL);
                         $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab . $Tab . 'return FALSE;' . PHP_EOL);
                         $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab . PHP_EOL);
@@ -496,8 +502,10 @@ class GeneratorCRUD {
                     $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab . PHP_EOL);
                     $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab . '} else {' . PHP_EOL);
                     $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab . PHP_EOL);
+                    $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab . $Tab . '$ArrayErro = $Consulta->errorInfo(); //A posição 2 do ArrayErro vai armezenar a Descrição do Erro.' . PHP_EOL);
+                    $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab . PHP_EOL);
                     $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab . $Tab . '$TratamentoMensagens = new TratamentoMensagens();' . PHP_EOL);
-                    $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab . $Tab . '$TratamentoMensagens->MsgErro(\'Erro no processamento do Select [ConsultaGeral] no Banco de Dados.\', NULL, NULL);' . PHP_EOL);
+                    $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab . $Tab . '$TratamentoMensagens->MsgErro(\'Erro no processamento do Select [ConsultaGeral] no Banco de Dados. Descrição do Erro : \' . $ArrayErro[2], NULL, NULL);' . PHP_EOL);
                     $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab . PHP_EOL);
                     $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab . $Tab . 'return NULL;' . PHP_EOL);
                     $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab . PHP_EOL);
@@ -589,8 +597,10 @@ class GeneratorCRUD {
                         
                         $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab . '} else {' . PHP_EOL);
                         $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab . PHP_EOL);
+                        $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab . $Tab . '$ArrayErro = $Consulta->errorInfo(); //A posição 2 do ArrayErro vai armezenar a Descrição do Erro.' . PHP_EOL);
+                        $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab . PHP_EOL);
                         $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab . $Tab . '$TratamentoMensagens = new TratamentoMensagens();' . PHP_EOL);
-                        $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab . $Tab . '$TratamentoMensagens->MsgErro(\'Erro no processamento do Select [Consulta Unica] no Banco de Dados.\', NULL, NULL);' . PHP_EOL);
+                        $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab . $Tab . '$TratamentoMensagens->MsgErro(\'Erro no processamento do Select [Consulta Unica] no Banco de Dados. Descrição do Erro : \' . $ArrayErro[2], NULL, NULL);' . PHP_EOL);
                         $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab . PHP_EOL);
                         $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab . $Tab . 'return NULL;' . PHP_EOL);
                         $Escrevendo = fwrite($ArquivoCRUD, $Tab . $Tab . PHP_EOL);
